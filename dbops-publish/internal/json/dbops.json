@@ -1,0 +1,85 @@
+{
+    "Libraries": {
+        "Desktop": [
+            "bin\\lib\\net45\\dbup-core.dll",
+            "bin\\lib\\net45\\dbup-sqlserver.dll",
+            "bin\\lib\\net45\\dbops-core.dll",
+            "bin\\lib\\net45\\dbops-sqlserver.dll"
+        ],
+        "Core": [
+            "bin\\lib\\netstandard2.0\\dbup-core.dll",
+            "bin\\lib\\netstandard2.0\\dbup-sqlserver.dll",
+            "bin\\lib\\netstandard2.0\\dbops-core.dll",
+            "bin\\lib\\netstandard2.0\\dbops-sqlserver.dll",
+            "bin\\lib\\netstandard2.0\\Microsoft.Data.SqlClient.dll"
+        ]
+    },
+    "Misc": [
+        "bin\\deploy.ps1",
+        "bin\\mail_template.htm"
+    ],
+    "Functions": [
+        "functions\\Add-DBOBuild.ps1",
+        "functions\\Get-DBOConfig.ps1",
+        "functions\\Install-DBOPackage.ps1",
+        "functions\\New-DBOPackage.ps1",
+        "functions\\Remove-DBOBuild.ps1",
+        "functions\\Get-DBOPackage.ps1",
+        "functions\\Get-DBOModuleFileList.ps1",
+        "functions\\Update-DBOConfig.ps1",
+        "functions\\Test-DBOSupportedSystem.ps1",
+        "functions\\Install-DBOSupportLibrary.ps1",
+        "functions\\Get-DBODefaultSetting.ps1",
+        "functions\\Set-DBODefaultSetting.ps1",
+        "functions\\Invoke-DBOPackageCI.ps1",
+        "functions\\Get-DBOPackageArtifact.ps1",
+        "functions\\Publish-DBOPackageArtifact.ps1",
+        "functions\\Copy-DBOPackageArtifact.ps1",
+        "functions\\Install-DBOScript.ps1",
+        "functions\\Register-DBOPackage.ps1",
+        "functions\\Send-DBOMailMessage.ps1",
+        "functions\\Reset-DBODefaultSetting.ps1",
+        "functions\\New-DBOConfig.ps1",
+        "functions\\Export-DBOConfig.ps1",
+        "functions\\ConvertTo-EncryptedString.ps1",
+        "functions\\ConvertFrom-EncryptedString.ps1",
+        "functions\\Invoke-DBOQuery.ps1",
+        "functions\\Update-DBOSchemaTable.ps1",
+        "functions\\Update-DBOPackage.ps1"
+    ],
+    "Internal": [
+        "internal\\functions\\Get-DbopsFile.ps1",
+        "internal\\functions\\Get-VariableToken.ps1",
+        "internal\\functions\\Resolve-VariableToken.ps1",
+        "internal\\functions\\Get-NewBuildNumber.ps1",
+        "internal\\functions\\Get-ExternalLibrary.ps1",
+        "internal\\functions\\Get-EncryptionKey.ps1",
+        "internal\\functions\\New-EncryptionKey.ps1",
+        "internal\\functions\\Test-Windows.ps1",
+        "internal\\functions\\Get-ConnectionManager.ps1",
+        "internal\\functions\\Get-ConnectionString.ps1",
+        "internal\\functions\\Get-SqlParser.ps1",
+        "internal\\functions\\Initialize-ExternalLibrary.ps1",
+        "internal\\functions\\Get-DbUpBuilder.ps1",
+        "internal\\functions\\Get-DbUpJournal.ps1",
+        "internal\\functions\\Invoke-EnsureDatabase.ps1",
+        "internal\\functions\\Get-DatabaseConnection.ps1",
+        "internal\\functions\\Invoke-Deployment.ps1",
+        "internal\\functions\\Install-NugetPackage.ps1",
+        "internal\\functions\\Test-AliasDeprecation.ps1",
+        "internal\\functions\\Merge-Config.ps1",
+        "internal\\classes\\DBOpsHelper.class.ps1",
+        "internal\\classes\\DBOps.class.ps1",
+        "internal\\classes\\DBOpsDeploymentStatus.class.ps1",
+        "internal\\classes\\DBOpsLog.class.ps1",
+        "internal\\classes\\DBOpsScriptComparer.class.ps1"
+    ],
+    "Core": [
+        "internal\\json\\dbops.json",
+        "internal\\json\\dbops.dependencies.json",
+        "dbops.psd1",
+        "dbops.psm1",
+        "internal\\xml\\dbops.types.ps1xml",
+        "internal\\xml\\dbops.format.ps1xml"
+    ]
+}

@@ -14,7 +14,23 @@ namespace DBOps.Tests
 
         public string Log => logBuilder.ToString();
 
-        public void WriteInformation(string format, params object[] args)
+        public void LogTrace(string format, params object[] args)
+        {
+            var formattedMsg = string.Format(format, args);
+            var value = "Trace:        " + formattedMsg;
+            Console.WriteLine(value);
+            logBuilder.AppendLine(value);
+        }
+
+        public void LogDebug(string format, params object[] args)
+        {
+            var formattedMsg = string.Format(format, args);
+            var value = "Debug:        " + formattedMsg;
+            Console.WriteLine(value);
+            logBuilder.AppendLine(value);
+        }
+
+        public void LogInformation(string format, params object[] args)
         {
             var formattedMsg = string.Format(format, args);
             var value = "Info:         " + formattedMsg;
@@ -23,7 +39,7 @@ namespace DBOps.Tests
             InfoMessages.Add(formattedMsg);
         }
 
-        public void WriteWarning(string format, params object[] args)
+        public void LogWarning(string format, params object[] args)
         {
             var formattedValue = string.Format(format, args);
             var value = "Warn:         " + formattedValue;
@@ -32,10 +48,19 @@ namespace DBOps.Tests
             WarnMessages.Add(formattedValue);
         }
 
-        public void WriteError(string format, params object[] args)
+        public void LogError(string format, params object[] args)
         {
             var formattedMessage = string.Format(format, args);
             var value = "Error:        " + formattedMessage;
+            Console.WriteLine(value);
+            logBuilder.AppendLine(value);
+            ErrorMessages.Add(formattedMessage);
+        }
+
+        public void LogError(Exception ex, string format, params object[] args)
+        {
+            var formattedMessage = string.Format(format, args);
+            var value = $"Error:        {formattedMessage}\nException: {ex}";
             Console.WriteLine(value);
             logBuilder.AppendLine(value);
             ErrorMessages.Add(formattedMessage);

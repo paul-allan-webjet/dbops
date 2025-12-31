@@ -1,0 +1,89 @@
+{
+    "Oracle": [
+        {
+            "Name": "Oracle.ManagedDataAccess",
+            "RequiredVersion": "12.2.1100",
+            "Path": [
+                "lib\\net40\\Oracle.ManagedDataAccess.dll"
+            ],
+            "PSEdition": [
+                "Desktop"
+            ]
+        },
+        {
+            "Name": "Oracle.ManagedDataAccess.Core",
+            "RequiredVersion": "2.19.170",
+            "Path": [
+                "lib\\netstandard2.0\\Oracle.ManagedDataAccess.dll"
+            ],
+            "PSEdition": [
+                "Core"
+            ]
+        }
+    ],
+    "SQLServer": [],
+    "MySQL": [
+        {
+            "Name": "MySql.Data",
+            "RequiredVersion": "6.9.5",
+            "Path": [
+                "lib\\net45\\MySql.Data.dll"
+            ],
+            "PSEdition": [
+                "Desktop"
+            ]
+        },
+        {
+            "Name": "MySql.Data",
+            "MinimumVersion": "6.10.7",
+            "MaximumVersion": "8.0.31",
+            "Path": [
+                "lib\\netstandard2.0\\MySql.Data.dll"
+            ],
+            "PSEdition": [
+                "Core"
+            ]
+        }
+    ],
+    "PostgreSQL": [
+        {
+            "Name": "Npgsql",
+            "RequiredVersion": "3.2.6",
+            "Path": [
+                "lib\\net451\\Npgsql.dll"
+            ],
+            "PSEdition": [
+                "Desktop"
+            ],
+            "Dependencies": [
+                {
+                    "Name": "System.Threading.Tasks.Extensions",
+                    "RequiredVersion": "4.3.0",
+                    "Path": [
+                        "lib\\netstandard1.0\\System.Threading.Tasks.Extensions.dll"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Npgsql",
+            "MinimumVersion": "4.0.4",
+            "MaximumVersion": "6.0.7",
+            "Path": [
+                "lib\\netstandard2.1\\Npgsql.dll"
+            ],
+            "PSEdition": [
+                "Core"
+            ],
+            "Dependencies": [
+                {
+                    "Name": "Microsoft.Bcl.HashCode",
+                    "RequiredVersion": "1.1.1",
+                    "Path": [
+                        "lib\\netstandard2.1\\Microsoft.Bcl.HashCode.dll"
+                    ]
+                }
+            ]
+        }
+    ]
+}

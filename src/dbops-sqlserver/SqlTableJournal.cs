@@ -30,7 +30,7 @@ namespace DBOps.SqlServer
                 var currentTableVersion = GetTableVersion(dbCommandFactory);
                 if (currentTableVersion < maxTableVersion)
                 {
-                    Log().WriteInformation("Upgrading schema version table...");
+                    Log().LogInformation("Upgrading schema version table...");
                     foreach (var sql in AlterSchemaTableSqlV2(currentTableVersion))
                     {
                         var command = dbCommandFactory();
@@ -43,7 +43,7 @@ namespace DBOps.SqlServer
             else
             {
                 var message = string.Format("Table {0} does not exist", FqSchemaTableName);
-                Log().WriteError(message);
+                Log().LogError(message);
                 throw new Exception(message);
             }
         }
