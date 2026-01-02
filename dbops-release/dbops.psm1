@@ -1,5 +1,7 @@
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
+# Store module root for use by functions
+$script:ModuleRoot = $PSScriptRoot
 . $PSScriptRoot\functions\Get-DBOModuleFileList.ps1
 foreach ($bin in (Get-DBOModuleFileList -Type Libraries -Edition $PSVersionTable.PSEdition).FullName) {
     if ($PSVersionTable.Platform -eq 'Win32NT') {

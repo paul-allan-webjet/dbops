@@ -38,13 +38,17 @@ Get-DBOModuleFileList -Type Functions
             $file = Get-Item -Path $Path
         }
         else {
-            $file = Get-Item -Path (Join-Path (Get-Item $PSScriptRoot).Parent.FullName $Path)
+            # Use module root set by dbops.psm1, fall back to PSScriptRoot parent for compatibility
+            $moduleRoot = if ($script:ModuleRoot) { $script:ModuleRoot } else { (Get-Item $PSScriptRoot).Parent.FullName }
+            $file = Get-Item -Path (Join-Path $moduleRoot $Path)
         }
         $obj.FullName = $file.FullName
         $obj.Name = $file.Name
         $obj
     }
-    $moduleCatalog = Get-Content (Join-PSFPath -Normalize (Get-Item $PSScriptRoot).Parent.FullName "internal\json\dbops.json") -Raw | ConvertFrom-Json
+    # Use module root set by dbops.psm1, fall back to PSScriptRoot parent for compatibility  
+    $moduleRoot = if ($script:ModuleRoot) { $script:ModuleRoot } else { (Get-Item $PSScriptRoot).Parent.FullName }
+    $moduleCatalog = Get-Content (Join-PSFPath -Normalize $moduleRoot "internal\json\dbops.json") -Raw | ConvertFrom-Json
     foreach ($property in $moduleCatalog.psobject.properties.Name) {
         if (!$Type -or $property -in $Type) {
             if ($property -eq 'Libraries') {
