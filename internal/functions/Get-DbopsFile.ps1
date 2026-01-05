@@ -53,7 +53,7 @@
             Stop-PSFFunction -EnableException $true -Message "The following path is not valid: $stringPath"
             return
         }
-        $fileItems = Get-Item $stringPath -ErrorAction Stop
+        $fileItems = Get-Item $stringPath -ErrorAction Stop | Sort-Object Name
         foreach ($currentItem in $fileItems) {
             if ($currentItem.PSIsContainer) {
                 Select-DbopsFile -Item $currentItem -Root $currentItem.Parent
