@@ -1,13 +1,13 @@
-﻿@{
+@{
 
     # Script module or binary module file associated with this manifest
     RootModule             = '.\dbops.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '0.9.3'
+    ModuleVersion = '0.10.0'
 
     # ID used to uniquely identify this module
-    GUID                   = '16dff216-533a-4fa3-9b2e-4408dbe15e63'
+    GUID = 'e1428aca-1d65-44e4-b39e-46c58054d47c'
 
     # Author of this module
     Author                 = 'Paul Allan, Kirill Kravtsov'
@@ -42,7 +42,7 @@
     # Modules that must be imported into the global environment prior to importing
     # this module
     RequiredModules        = @(
-        @{ ModuleName = 'PSFramework'; ModuleVersion = '0.10.30.165' }
+        @{ ModuleName = 'PSFramework'; ModuleVersion = '0.10.0' }
     )
 
     # Assemblies that must be loaded prior to importing this module

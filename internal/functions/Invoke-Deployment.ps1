@@ -264,7 +264,7 @@
                                     $dbUpTableJournal.StoreExecutedScript($script, $dbCommandFactory)
                                 })
                             $registeredScripts += $script
-                            $dbUpLog.WriteInformation("{0} was registered in table {1}", @($script.Name, $config.SchemaVersionTable))
+                            $dbUpLog.LogInformation("{0} was registered in table {1}", @($script.Name, $config.SchemaVersionTable))
                         }
                     }
                     $status.Successful = $true
@@ -307,10 +307,10 @@
                     else {
                         foreach ($script in $preScriptCollection) {
                             $status.Scripts += $script
-                            $dbUpLog.WriteInformation("{0} would have been executed - WhatIf mode.", $script.Name)
+                            $dbUpLog.LogInformation("{0} would have been executed - WhatIf mode.", $script.Name)
                         }
                         $status.Successful = $true
-                        $dbUpLog.WriteInformation("No pre-deployment performed - WhatIf mode.", $null)
+                        $dbUpLog.LogInformation("No pre-deployment performed - WhatIf mode.", $null)
                     }
                 }
                 # Build and Upgrade
@@ -325,13 +325,13 @@
                     foreach ($script in $scriptCollection) {
                         if ($script.Name -notin $deployedScripts) {
                             $missingScripts += $script
-                            $dbUpLog.WriteInformation("{0} would have been executed - WhatIf mode.", $script.Name)
+                            $dbUpLog.LogInformation("{0} would have been executed - WhatIf mode.", $script.Name)
                         }
                     }
                     $managedConnection.Dispose()
                     $status.Scripts += $missingScripts
                     $status.Successful = $true
-                    $dbUpLog.WriteInformation("No deployment performed - WhatIf mode.", $null)
+                    $dbUpLog.LogInformation("No deployment performed - WhatIf mode.", $null)
                 }
                 # Post scripts
                 if ($postScriptCollection) {
@@ -344,10 +344,10 @@
                     else {
                         foreach ($script in $postScriptCollection) {
                             $status.Scripts += $script
-                            $dbUpLog.WriteInformation("{0} would have been executed - WhatIf mode.", $script.Name)
+                            $dbUpLog.LogInformation("{0} would have been executed - WhatIf mode.", $script.Name)
                         }
                         $status.Successful = $true
-                        $dbUpLog.WriteInformation("No post-deployment performed - WhatIf mode.", $null)
+                        $dbUpLog.LogInformation("No post-deployment performed - WhatIf mode.", $null)
                     }
                 }
             }

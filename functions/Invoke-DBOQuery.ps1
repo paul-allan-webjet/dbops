@@ -333,7 +333,7 @@ function Invoke-DBOQuery {
                                         # receive events we got so far and put them in the log
                                         $events = $eventOutput | Receive-Job
                                         foreach ($logEntry in $events) {
-                                            $dbUpLog.WriteInformation($logEntry, $null)
+                                            $dbUpLog.LogInformation($logEntry, $null)
                                         }
                                     }
                                     while (-not $readerTask.IsCompleted) {
